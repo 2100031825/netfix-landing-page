@@ -1,0 +1,178 @@
+.app-shell {
+  min-height: 100vh;
+  background: #141414;
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+  min-height: 70vh;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #141414 5%, transparent 60%),
+    linear-gradient(to right, rgba(20, 20, 20, 0.95), rgba(20, 20, 20, 0.2));
+}
+
+.top-nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+}
+
+.brand {
+  color: #e50914;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 8rem 3rem 2rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin: 0 0 0.8rem;
+}
+
+.hero-content p {
+  margin: 0;
+  max-width: 55ch;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.btn {
+  border: 0;
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-play {
+  background: #fff;
+  color: #000;
+}
+
+.btn-info {
+  background: rgba(109, 109, 110, 0.7);
+  color: #fff;
+}
+
+.rows {
+  position: relative;
+  z-index: 2;
+  margin-top: -80px;
+  padding-bottom: 3rem;
+}
+
+.movie-row {
+  margin: 0 0 1.6rem;
+}
+
+.movie-row h2 {
+  margin: 0 0 0.6rem;
+  padding: 0 3rem;
+  font-size: 1.1rem;
+}
+
+.posters {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0 3rem;
+  scroll-behavior: smooth;
+}
+
+.posters::-webkit-scrollbar {
+  height: 8px;
+}
+
+.posters::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 999px;
+}
+
+.poster-card {
+  flex: 0 0 auto;
+  width: clamp(130px, 14vw, 180px);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #222;
+  transition: transform 180ms ease;
+}
+
+.poster-card:hover {
+  transform: scale(1.07);
+}
+
+.poster-card img,
+.poster-fallback {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  display: block;
+}
+
+.poster-fallback {
+  display: grid;
+  place-items: center;
+  padding: 0.8rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+.status {
+  padding: 0 3rem;
+}
+
+.error {
+  color: #ff7676;
+}
+
+.fade-bottom {
+  height: 120px;
+  background: linear-gradient(180deg, transparent, #141414);
+}
+
+@media (max-width: 700px) {
+  .top-nav,
+  .hero-content,
+  .movie-row h2,
+  .posters,
+  .status {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
